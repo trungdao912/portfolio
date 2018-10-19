@@ -1,0 +1,32 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-primary-dark;
+}
+
+.heading-primary {
+    font-size: 7rem;
+    font-weight: 700;
+
+    &--white {
+        color: $color-white;
+    }
+}
+
+.heading-secondary {
+    font-size: 4.5rem;
+    font-weight: 700;
+
+    &--white {
+        color: $color-white;
+    }
+}
+
+.heading-third {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 5rem;
+    border-left: .5rem solid $color-primary-dark;
+    padding: 1rem;
+}

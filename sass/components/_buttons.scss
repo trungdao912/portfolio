@@ -1,0 +1,32 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        font-size: 1.6rem;
+        padding: 2rem;
+        display: inline-block;
+        margin-top: 5rem;
+        width: 40%;
+        text-align: center;
+        border-radius: 1rem;
+        transition: all .5s ease-out;
+        position: relative;
+    }
+
+    &:hover,
+    &:focus {
+        transform: translateY(-.3rem);
+    }
+
+    &--white {
+        color: $color-white;
+        border: .1rem solid $color-white;
+    }
+
+    &--dark {
+        color: $color-primary-dark;
+        border: .1rem solid $color-primary-dark;
+    }
+
+}

@@ -1,0 +1,270 @@
+.navigation {
+    color: $color-primary-dark;
+    font-size: 1.6rem;
+    position: fixed;
+    top: 5rem;
+    right: 0rem;
+    z-index: 9999;
+    a {
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+        margin: .1rem 0;
+        border: 1px $color-primary-dark solid;
+        background-color: $color-white;
+        border-radius: 1rem;
+        padding: 1rem 4rem 1rem 4rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all .5s;
+        &:hover {
+            background-color: $color-nav;
+            color: $color-white;
+            transform: translateX(-1rem);
+        }
+    }
+
+    &__burger {
+        border: 2px $color-white solid;
+        // width: 45%;
+        padding: 1.5rem 0;
+        border-radius: 50%;
+        cursor: pointer;
+        text-align: center;
+        display: none;
+    }
+
+    &__toggle {
+        display: none;
+    }
+
+    &__icon {
+        background-color: $color-white;
+        width: 2rem;
+        height: 5px;
+        display: inline-block;
+        position: relative;
+        &::before,
+        &::after {
+            content: ' ';
+            background-color: $color-white;
+            width: 2rem;
+            height: 5px;
+            display: inline-block;
+            position: absolute;
+        }
+
+        &::before {
+            top: 1rem;
+            left: 0;
+        }
+
+        &::after {
+            top: -1.1rem;
+            left: 0;
+        }
+    }
+
+    @include respond(phone) {
+
+        &__static {
+            opacity: 0;
+        }
+
+        right: 5rem;
+        top: -20rem;
+        &__burger {
+            display: inline-block;
+            width: 40%;
+        }
+        &__toggle {
+        }
+    }
+}
+
+.section-home {
+    height: 100vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-dark, 0.8),
+        rgba($color-primary-light, 0.8)
+      ), url(../img/caspar-rubin-224229-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(30%);
+    position: relative;
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-100%, -50%);
+        @include respond(phone) {
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    }
+}
+
+.section-about-me {
+    background-color: $color-white;
+    @include clearfix;
+    height: 100%;
+    &__left {
+        float: left;
+        width: 45%;
+        img {
+            width: 100%;
+            filter: grayscale(80%);
+            height: 100%;
+        }
+        @include respond(phone) {
+            float: none;
+            width: 100%;
+        }
+    }
+    &__right {
+        float: left;
+        width: 40%;
+        margin-top: 42rem;
+        margin-left: 20rem;
+        @include respond(tab-land) {
+            margin-top: 25rem;
+            margin-left: 15rem;
+        }
+        @include respond(phone) {
+            float: none;
+            width: 100%;
+            margin-top: 5rem;
+            padding-bottom: 5rem;
+            padding-right: 10rem;
+        }
+
+        @include respond(tab-port) {
+            margin-top: 20rem;
+        }
+
+        @include respond(tab-port-2) {
+            margin-top: 10rem;
+        }
+    }
+
+    &__paragraph {
+        font-size: 1.6rem;
+        font-weight: 500;
+        width: 80%;
+    }
+}
+
+.section-skillset {
+    &__paragraph {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    @include respond(phone) {
+        &__title {
+            padding-left: 15rem;
+            padding-right: 5rem;
+        }
+        .col-1-of-2 {
+            width: 100%;
+        }
+
+        .col-1-of-3 {
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+
+        &__content {
+            padding-left: 15rem;
+        }
+    }
+}
+
+.section-projects {
+    background-color: $color-white;
+    &__container {
+        text-decoration: none;
+        position: relative;      
+        &:hover .section-projects__content {
+            opacity: 1;
+        }
+
+        &:hover .section-projects__image {
+            transform: scale(1.2);
+            filter: brightness(40%);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        transition: all .3s ease-out;
+    }
+
+    &__content {
+        font-size: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: $color-white;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all .5s ease-out;
+        font-weight: 600;
+    }
+
+    &__paragraph {
+        font-size: 1.6rem;
+    }
+}
+
+.section-contact {
+
+    &__paragraph {
+        font-size: 1.6rem;
+    }
+
+    &__image {
+        width: 7.5%;
+        margin-right: 2.5rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+        vertical-align: middle;
+        transition: all .5s ease-out;
+        &:hover + .section-contact__line {
+            width: 30%;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__line {
+        border-bottom: 1px solid $color-primary-light;
+        width: 10%;
+        display: inline-block;
+        transition: all .5s ease-out;
+    }
+
+    @include respond(phone) {
+        .col-1-of-2 {
+            width: 100%;
+            padding-left: 15rem;
+            padding-right: 5rem;
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+.section-footer {
+    background-color: $color-white;
+    text-align:center;
+    font-size: 1.6rem;
+    padding: 5rem 0;
+
+    @include respond(phone) {
+        margin-top: 0rem;
+    }
+}
